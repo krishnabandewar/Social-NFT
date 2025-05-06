@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Social-NFT
 =======
 # auto-social-nft
@@ -63,3 +64,6 @@ To get started with the project, follow these steps:
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 >>>>>>> faa6863 (Initial commit)
+=======
+# Social-NFT
+>>>>>>> 81e8e234e17e42854465195694bef685f3eeb90d
