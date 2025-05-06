@@ -1,0 +1,801 @@
+/* Modern NFT Website Styling */
+:root {
+  --primary-color: #6c5ce7;
+  --secondary-color: #a55eea;
+  --accent-color: #00b894;
+  --background-dark: #0f1318;
+  --card-bg: #1a1f25;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --gradient-primary: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Layout */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Header Styles */
+.app-header {
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(108,92,231,0.1) 0%, rgba(0,0,0,0) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.app-header h1:hover {
+  opacity: 0.8;
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  padding-top: 80px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 6rem 2rem 2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Intro Section */
+.intro-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: slideIn 0.3s ease forwards;
+}
+
+.intro-hero {
+  text-align: center;
+  margin-bottom: 6rem;
+  padding: 4rem 1rem;
+  background: radial-gradient(circle at center, rgba(108,92,231,0.1) 0%, rgba(0,0,0,0) 70%);
+}
+
+.intro-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button Styles */
+.cta-button {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(108,92,231,0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(108,92,231,0.4);
+}
+
+/* Features Section */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px rgba(108,92,231,0.2);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* How It Works Section */
+.how-it-works {
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.step {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px rgba(108,92,231,0.2);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: bold;
+}
+
+/* NFT Display Section */
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.nft-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+
+.nft-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px rgba(108,92,231,0.2);
+}
+
+.nft-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.nft-card h3 {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.nft-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem;
+  }
+  
+  .app-main {
+    padding: 5rem 1rem 1rem;
+  }
+  
+  .intro-hero {
+    padding: 2rem 1rem;
+  }
+  
+  .features-grid,
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-card,
+  .step {
+    padding: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Loading States */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}
+
+/* Error States */
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255,107,107,0.1);
+  margin: 1rem 0;
+}
+
+/* Success States */
+.success-message {
+  color: #00b894;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(0,184,148,0.1);
+  margin: 1rem 0;
+}
+
+/* Add to existing styles.css */
+
+.benefits-section {
+  padding: 4rem 0;
+  background: radial-gradient(circle at center, rgba(108,92,231,0.1) 0%, rgba(0,0,0,0) 70%);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.benefit-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.benefit-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.faq-section {
+  padding: 4rem 0;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.faq-item {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.faq-item h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 6rem 0;
+  background: radial-gradient(circle at center, rgba(108,92,231,0.1) 0%, rgba(0,0,0,0) 70%);
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-section p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .benefits-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Add after existing styles */
+
+/* Mint Button Styles */
+.mint-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.mint-button {
+  background: var(--gradient-primary);
+  min-width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Connect Wallet Styles */
+.connect-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.connect-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.connect-desc {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.connect-button {
+  min-width: 220px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.wallet-icon {
+  font-size: 1.2rem;
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success Message */
+.success-message {
+  background: rgba(0,184,148,0.1);
+  border: 1px solid var(--accent-color);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.success-icon {
+  font-size: 1.5rem;
+}
+
+/* Disabled State */
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Facebook Button Styles */
+.social-login-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.facebook-button {
+  background: var(--gradient-primary);
+  min-width: 250px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.facebook-icon {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.facebook-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(108,92,231,0.3);
+}
+
+.facebook-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* NFT Preview Styles */
+.nft-preview {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.preview-details {
+  margin-top: 1rem;
+}
+
+.preview-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* Share Button */
+.share-button {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Transaction History */
+.transaction-history {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+}
+
+.transaction-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Network Status */
+.network-status {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card-bg);
+}
+
+.network-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.correct .network-indicator {
+  background: #00b894;
+}
+
+.wrong .network-indicator {
+  background: #ff6b6b;
+}
+
+/* Gas Estimator */
+.gas-estimator {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Button Variations */
+.preview-button {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.preview-button:hover {
+  background: rgba(108,92,231,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(108,92,231,0.2);
+}
+
+.share-button {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 0.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.share-button:hover {
+  background: rgba(0,184,148,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,184,148,0.2);
+}
+
+.share-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hide/Show NFT Button */
+.toggle-visibility-button {
+  background: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-visibility-button:hover {
+  background: rgba(165,94,234,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(165,94,234,0.2);
+}
+
+/* Navigation Controls */
+.navigation-controls {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  background: linear-gradient(180deg, var(--background-dark) 0%, transparent 100%);
+}
+
+.nav-button {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-button:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.page-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+}
+
+.active-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .navigation-controls {
+    padding: 1rem;
+    top: 70px;
+  }
+  
+  .nav-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Swipe Transition Styles */
+.app-container {
+  touch-action: pan-y pinch-zoom;
+}
+
+.app-main {
+  transition: transform 0.3s ease;
+}
+
+/* Page Transition Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.hero-section,
+.content-wrapper,
+.intro-container {
+  animation: slideIn 0.3s ease forwards;
+}
